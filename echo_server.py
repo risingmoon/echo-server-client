@@ -1,7 +1,6 @@
 import socket
 
 
-
 def socket_setup():
 	"""Returns and setup a socket based on this
 	project's configuration"""
@@ -10,12 +9,13 @@ def socket_setup():
 		socket.SOCK_STREAM,
 		socket.IPPROTO_TCP)
 
-def recv(connection, buffer_size):
-
+def recv(socket, buffer_size):
+	"""Receives Data Interface by passing socket
+	and buffer_size argument into this method"""
 	response = ''
 	done = False
 	while not done:
-		msg_part = connection.recv(buffer_size)
+		msg_part = socket.recv(buffer_size)
 		response += msg_part
 		if len(msg_part) < buffer_size:
 			done = True

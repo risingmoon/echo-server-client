@@ -4,7 +4,7 @@ from echo_server import socket_setup, recv
 
 
 if __name__ == "__main__":
-	
+	#Client sends string message to server from arg
 	client_socket = socket_setup()
 
 	client_socket.connect(('127.0.0.1',50000))
